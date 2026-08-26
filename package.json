@@ -1,0 +1,10 @@
+{
+  "name": "japan-power-futures-netlify",
+  "version": "1.0.0",
+  "private": true,
+  "description": "日本电力期货数据展示平台 - Netlify 公开部署",
+  "scripts": {
+    "build": "node build.js",
+    "seed": "node seed.js"
+  }
+}

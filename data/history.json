@@ -1,0 +1,366 @@
+[
+  {
+    "date": "2026-08-13",
+    "updated_at": "2026-08-13T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 29.66,
+      "change_pct": 4.06,
+      "volume": 107404,
+      "open_interest": 59405,
+      "market_heat": 53
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-14",
+    "updated_at": "2026-08-14T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 29.52,
+      "change_pct": -0.47,
+      "volume": 127051,
+      "open_interest": 60295,
+      "market_heat": 67
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-15",
+    "updated_at": "2026-08-15T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 31.04,
+      "change_pct": 5.17,
+      "volume": 107377,
+      "open_interest": 54776,
+      "market_heat": 57
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-16",
+    "updated_at": "2026-08-16T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 30.45,
+      "change_pct": -1.92,
+      "volume": 121689,
+      "open_interest": 52541,
+      "market_heat": 62
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-17",
+    "updated_at": "2026-08-17T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 30.98,
+      "change_pct": 1.75,
+      "volume": 122971,
+      "open_interest": 61597,
+      "market_heat": 67
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-18",
+    "updated_at": "2026-08-18T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 31.03,
+      "change_pct": 0.17,
+      "volume": 129577,
+      "open_interest": 63946,
+      "market_heat": 62
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-19",
+    "updated_at": "2026-08-19T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 31.77,
+      "change_pct": 2.36,
+      "volume": 103691,
+      "open_interest": 59302,
+      "market_heat": 54
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-20",
+    "updated_at": "2026-08-20T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 31.23,
+      "change_pct": -1.68,
+      "volume": 135290,
+      "open_interest": 60488,
+      "market_heat": 63
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-21",
+    "updated_at": "2026-08-21T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 31.42,
+      "change_pct": 0.59,
+      "volume": 137236,
+      "open_interest": 55978,
+      "market_heat": 60
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-22",
+    "updated_at": "2026-08-22T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 32.12,
+      "change_pct": 2.24,
+      "volume": 115356,
+      "open_interest": 54817,
+      "market_heat": 67
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-23",
+    "updated_at": "2026-08-23T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 33.07,
+      "change_pct": 2.97,
+      "volume": 113676,
+      "open_interest": 62133,
+      "market_heat": 74
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-24",
+    "updated_at": "2026-08-24T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 32.82,
+      "change_pct": -0.78,
+      "volume": 115690,
+      "open_interest": 53747,
+      "market_heat": 76
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-25",
+    "updated_at": "2026-08-25T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 34.07,
+      "change_pct": 3.81,
+      "volume": 112431,
+      "open_interest": 52490,
+      "market_heat": 75
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  },
+  {
+    "date": "2026-08-26",
+    "updated_at": "2026-08-26T01:30:00",
+    "spec_indicators": [
+      "最新结算价",
+      "当日涨跌",
+      "成交量",
+      "持仓量",
+      "市场热度"
+    ],
+    "metrics": {
+      "latest_price": 32.66,
+      "change_pct": -4.13,
+      "volume": 122531,
+      "open_interest": 52089,
+      "market_heat": 62
+    },
+    "sources": {
+      "westock": "腾讯自选股-金融数据查询",
+      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    },
+    "raw": {
+      "westock": {},
+      "eastmoney_markdown": null
+    }
+  }
+]

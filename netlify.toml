@@ -1,0 +1,16 @@
+[build]
+  # 构建命令：将前端 src/ 与数据 data/ 打包到发布目录 dist/
+  command = "npm run build"
+  # 发布目录（与项目结构匹配：构建产物放在 dist）
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# 公开访问：Netlify 默认即为公网公开部署，无需鉴权。
+# 如需强制 HTTPS，可保留以下重定向（可选）。
+[[redirects]]
+  from = "http://:splat"
+  to = "https://:splat"
+  status = 301
+  force = true

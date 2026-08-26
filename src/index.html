@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+<!-- This site is hosted on Netlify. -->
+<meta name="hosting-provider" content="Netlify">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>日本电力期货数据日报 | 华泰期货</title>
+  <meta name="description" content="日本电力期货（JEPX）每日数据统计与可视化展示 · 华泰期货" />
+  <link rel="icon" href="assets/logo.png" type="image/png" />
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- 顶栏 -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <img src="assets/logo.png" alt="华泰期货" class="logo" />
+      <div class="brand">华泰期货 · <b>研究</b></div>
+      <div class="spacer"></div>
+      <nav>
+        <a href="#overview">市场概览</a>
+        <a href="#contracts">重点合约</a>
+        <a href="#news">新闻</a>
+        <a href="#logics">交易逻辑</a>
+        <a href="#watchlist">关注事项</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- 报头 -->
+  <div class="cover">
+    <div class="cover-card" id="cover-card"></div>
+  </div>
+
+  <!-- 正文 -->
+  <div class="page">
+    <aside class="toc" id="toc"></aside>
+    <main class="content" id="content"></main>
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="disc" id="disc"></div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

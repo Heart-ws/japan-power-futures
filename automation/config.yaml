@@ -1,0 +1,47 @@
+# =============================================================
+# 日本电力期货数据 · 每日自动更新 配置（Netlify 仓库版）
+# 本配置供 automation/japan_power_futures_updater.py 使用。
+# 更新结果写入 ../data/，由构建脚本 build.js 发布到 dist/data/，
+# 推送到 Git 后 Netlify 自动重新部署 → 实现「每日自动更新 + 公网展示」。
+# =============================================================
+
+schedule:
+  cron: "30 9 * * *"          # 每天上午 09:30
+  timezone: "Asia/Shanghai"
+
+paths:
+  # 引用方案说明（驱动“要统计哪些指标”），相对 automation/ 目录
+  md_spec: "./日本电力期货数据展示网页_方案说明.md"
+  # 数据落地到仓库根 data/（构建时会被复制进 dist/data/）
+  work_dir: "../data"
+  log_file: "../logs/updater.log"
+
+skills:
+  westock:
+    enabled: true
+    command: "npx"
+    args: ["-y", "westock-data-skillhub@1.0.5"]
+    # ↓↓↓ 必须替换为「真实可用」的日本电力期货标的代码 ↓↓↓
+    # 获取方法：在本机先手动跑一次下面命令，看返回的标的/代码，再填进来
+    #   npx -y westock-data-skillhub@1.0.5 search 日本电力
+    #   npx -y westock-data-skillhub@1.0.5 kline <你的代码> --period day --limit 5
+    # 当前 "jp_power_futures" 仅为占位符，需改成真实代码，否则拉不到数据。
+    symbols: ["jp_power_futures"]
+    kline_limit: 60
+  eastmoney_miaoxiang:
+    enabled: true
+    # ↓↓↓ 本机已存在的妙想脚本路径（本地运行/任务计划程序方式可直接用） ↓↓↓
+    script: "C:/Users/35532/.workbuddy/skills/mx-finance-data/scripts/get_data.py"
+    # 若改用 GitHub Actions 云端运行：请把上面脚本复制到仓库内（如 automation/vendor/get_data.py），
+    # 并把 script 改成相对路径 "vendor/get_data.py"，否则云端 Runner 找不到该文件。
+    query: "日本电力期货 近期结算价 成交量 持仓量 市场热度"
+    indicators: "结算价、成交量、持仓量、市场热度"
+
+update:
+  retry: 3
+  retry_backoff_seconds: 60
+  keep_history_days: 365
+
+alert:
+  enabled: false
+  webhook: ""
