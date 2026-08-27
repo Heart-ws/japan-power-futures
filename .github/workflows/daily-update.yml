@@ -1,14 +1,23 @@
-name: 每日更新日本电力期货数据
+name: 每日更新日本电力（JEPX）数据
 
-# 每天 09:30（Asia/Shanghai = 01:30 UTC）自动运行更新脚本，
-# 将新的数据提交回仓库 → Netlify 监听到 push 后自动重新部署。
+# 每天北京时间 09:30（= 01:30 UTC）自动抓取 JEPX 官方公开数据，
+# 将新数据提交回仓库 → Netlify 监听到 push 后自动重新部署。
+#
+# 说明：automation/jepx_fetch.py 仅使用 Python 标准库，且数据源是
+# JEPX 官方公开 CSV（https://www.jepx.jp/market/excel/spot_<FY>.csv），
+# 因此本工作流在云端 Runner 上可完全独立运行，无需本机开机、无需任何密钥。
 on:
   schedule:
-    - cron: "30 1 * * *"      # UTC 时间；对应北京时间 09:30
-  workflow_dispatch:          # 支持手动触发
+    - cron: "30 1 * * *"      # UTC；对应北京时间 09:30
+  workflow_dispatch:          # 支持在 Actions 页手动触发
 
 permissions:
   contents: write
+
+# 防止手动触发与定时触发同时跑导致 push 冲突
+concurrency:
+  group: jepx-daily-update
+  cancel-in-progress: false
 
 jobs:
   update:
@@ -16,22 +25,31 @@ jobs:
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: 配置 Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.13"
 
-      - name: 安装依赖
-        run: pip install -r automation/requirements.txt
-
-      - name: 运行每日更新（写入 data/）
+      - name: 抓取 JEPX 官方数据（写入 data/）
         working-directory: automation
-        run: python3 japan_power_futures_updater.py --config config.yaml --run-once
+        run: python jepx_fetch.py
 
-      - name: 提交并更新（如有变化则推送，触发 Netlify 部署）
+      - name: 校验产物有效性
+        run: |
+          python - <<'PY'
+          import json, sys, datetime
+          latest = json.load(open("data/latest.json", encoding="utf-8"))
+          hist = json.load(open("data/history.json", encoding="utf-8"))
+          assert latest.get("date"), "latest.json 缺少 date"
+          m = latest.get("metrics") or {}
+          assert isinstance(m.get("latest_price"), (int, float)), "缺少有效系统价格"
+          assert (latest.get("raw") or {}).get("jepx", {}).get("slots") == 48, "时段不足 48，数据不完整"
+          assert len(hist) >= 5, f"历史序列过短：{len(hist)}"
+          print(f"校验通过：{latest['date']} 系统价格 {m['latest_price']} 円/kWh，历史 {len(hist)} 天")
+          PY
+
+      - name: 提交并推送（如有变化，触发 Netlify 重新部署）
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -39,6 +57,12 @@ jobs:
           if git diff --cached --quiet; then
             echo "无数据变化，跳过部署。"
           else
-            git commit -m "chore: 每日自动更新日本电力期货数据 $(date +%F)"
+            git commit -m "chore: 每日自动更新 JEPX 数据 $(date +%F)"
             git push
           fi
+
+      - name: 失败时输出抓取日志便于排查
+        if: failure()
+        run: |
+          echo "===== jepx_fetch.log ====="
+          cat automation/logs/jepx_fetch.log 2>/dev/null || echo "(无日志文件)"
