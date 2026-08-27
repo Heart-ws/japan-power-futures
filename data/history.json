@@ -1,366 +1,1622 @@
 [
   {
-    "date": "2026-08-13",
-    "updated_at": "2026-08-13T01:30:00",
+    "date": "2026-07-30",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 29.66,
-      "change_pct": 4.06,
-      "volume": 107404,
-      "open_interest": 59405,
-      "market_heat": 53
+      "latest_price": 22.74,
+      "change_pct": 1.52,
+      "volume": 1378612.2,
+      "tokyo_price": 23.78,
+      "spread": 20.83,
+      "peak": 37.0,
+      "trough": 16.17,
+      "sell_bid_mwh": 1851920.8,
+      "buy_bid_mwh": 1700338.2
+    },
+    "area_avg": {
+      "hokkaido": 11.62,
+      "tohoku": 19.87,
+      "tokyo": 23.78,
+      "chubu": 23.88,
+      "hokuriku": 22.43,
+      "kansai": 21.39,
+      "chugoku": 18.85,
+      "shikoku": 18.43,
+      "kyushu": 18.62
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 22.74
+      }
+    }
+  },
+  {
+    "date": "2026-07-31",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 23.48,
+      "change_pct": 3.25,
+      "volume": 1422140.5,
+      "tokyo_price": 23.85,
+      "spread": 19.66,
+      "peak": 36.5,
+      "trough": 16.84,
+      "sell_bid_mwh": 1897425.9,
+      "buy_bid_mwh": 1740272.2
+    },
+    "area_avg": {
+      "hokkaido": 14.86,
+      "tohoku": 18.04,
+      "tokyo": 23.85,
+      "chubu": 23.83,
+      "hokuriku": 22.32,
+      "kansai": 22.13,
+      "chugoku": 18.78,
+      "shikoku": 16.74,
+      "kyushu": 17.46
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 23.48
+      }
+    }
+  },
+  {
+    "date": "2026-08-01",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 19.36,
+      "change_pct": -17.55,
+      "volume": 1283456.1,
+      "tokyo_price": 25.81,
+      "spread": 20.18,
+      "peak": 32.02,
+      "trough": 11.84,
+      "sell_bid_mwh": 1995224.1,
+      "buy_bid_mwh": 1605182.8
+    },
+    "area_avg": {
+      "hokkaido": 10.3,
+      "tohoku": 12.9,
+      "tokyo": 25.81,
+      "chubu": 22.04,
+      "hokuriku": 17.7,
+      "kansai": 17.7,
+      "chugoku": 16.71,
+      "shikoku": 14.66,
+      "kyushu": 16.68
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.36
+      }
+    }
+  },
+  {
+    "date": "2026-08-02",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 17.43,
+      "change_pct": -9.97,
+      "volume": 1228405.6,
+      "tokyo_price": 23.41,
+      "spread": 18.18,
+      "peak": 28.0,
+      "trough": 9.82,
+      "sell_bid_mwh": 2013816.5,
+      "buy_bid_mwh": 1527786.1
+    },
+    "area_avg": {
+      "hokkaido": 7.5,
+      "tohoku": 12.5,
+      "tokyo": 23.41,
+      "chubu": 18.76,
+      "hokuriku": 17.27,
+      "kansai": 17.27,
+      "chugoku": 17.27,
+      "shikoku": 14.67,
+      "kyushu": 15.52
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 17.43
+      }
+    }
+  },
+  {
+    "date": "2026-08-03",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 19.78,
+      "change_pct": 13.48,
+      "volume": 1298120.1,
+      "tokyo_price": 21.87,
+      "spread": 16.48,
+      "peak": 29.44,
+      "trough": 12.96,
+      "sell_bid_mwh": 1949444.2,
+      "buy_bid_mwh": 1630406.5
+    },
+    "area_avg": {
+      "hokkaido": 9.75,
+      "tohoku": 12.28,
+      "tokyo": 21.87,
+      "chubu": 23.66,
+      "hokuriku": 22.91,
+      "kansai": 22.57,
+      "chugoku": 19.12,
+      "shikoku": 16.71,
+      "kyushu": 17.04
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.78
+      }
+    }
+  },
+  {
+    "date": "2026-08-04",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 19.38,
+      "change_pct": -2.02,
+      "volume": 1322581.2,
+      "tokyo_price": 21.98,
+      "spread": 19.87,
+      "peak": 31.65,
+      "trough": 11.78,
+      "sell_bid_mwh": 2013578.9,
+      "buy_bid_mwh": 1613435.9
+    },
+    "area_avg": {
+      "hokkaido": 10.92,
+      "tohoku": 11.1,
+      "tokyo": 21.98,
+      "chubu": 23.79,
+      "hokuriku": 22.25,
+      "kansai": 21.65,
+      "chugoku": 20.03,
+      "shikoku": 16.87,
+      "kyushu": 18.8
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.38
+      }
+    }
+  },
+  {
+    "date": "2026-08-05",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 19.78,
+      "change_pct": 2.06,
+      "volume": 1320937.9,
+      "tokyo_price": 21.8,
+      "spread": 23.5,
+      "peak": 35.0,
+      "trough": 11.5,
+      "sell_bid_mwh": 1995057.9,
+      "buy_bid_mwh": 1627301.4
+    },
+    "area_avg": {
+      "hokkaido": 13.84,
+      "tohoku": 15.48,
+      "tokyo": 21.8,
+      "chubu": 24.47,
+      "hokuriku": 23.93,
+      "kansai": 21.53,
+      "chugoku": 19.49,
+      "shikoku": 18.57,
+      "kyushu": 18.79
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.78
+      }
+    }
+  },
+  {
+    "date": "2026-08-06",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 23.44,
+      "change_pct": 18.5,
+      "volume": 1388539.2,
+      "tokyo_price": 24.54,
+      "spread": 20.24,
+      "peak": 37.49,
+      "trough": 17.25,
+      "sell_bid_mwh": 1949134.8,
+      "buy_bid_mwh": 1736799.8
+    },
+    "area_avg": {
+      "hokkaido": 18.25,
+      "tohoku": 18.38,
+      "tokyo": 24.54,
+      "chubu": 25.76,
+      "hokuriku": 24.15,
+      "kansai": 21.42,
+      "chugoku": 20.02,
+      "shikoku": 19.04,
+      "kyushu": 19.15
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 23.44
+      }
+    }
+  },
+  {
+    "date": "2026-08-07",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 23.08,
+      "change_pct": -1.54,
+      "volume": 1383905.6,
+      "tokyo_price": 25.4,
+      "spread": 14.38,
+      "peak": 32.51,
+      "trough": 18.13,
+      "sell_bid_mwh": 1944373.8,
+      "buy_bid_mwh": 1706565.4
+    },
+    "area_avg": {
+      "hokkaido": 18.58,
+      "tohoku": 18.58,
+      "tokyo": 25.4,
+      "chubu": 25.3,
+      "hokuriku": 24.33,
+      "kansai": 19.54,
+      "chugoku": 18.52,
+      "shikoku": 14.12,
+      "kyushu": 18.02
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 23.08
+      }
+    }
+  },
+  {
+    "date": "2026-08-08",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 19.06,
+      "change_pct": -17.42,
+      "volume": 1189525.1,
+      "tokyo_price": 24.14,
+      "spread": 17.88,
+      "peak": 28.72,
+      "trough": 10.84,
+      "sell_bid_mwh": 1853412.8,
+      "buy_bid_mwh": 1514305.4
+    },
+    "area_avg": {
+      "hokkaido": 17.97,
+      "tohoku": 17.97,
+      "tokyo": 24.14,
+      "chubu": 22.15,
+      "hokuriku": 19.55,
+      "kansai": 17.84,
+      "chugoku": 17.78,
+      "shikoku": 17.12,
+      "kyushu": 15.93
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.06
+      }
+    }
+  },
+  {
+    "date": "2026-08-09",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 16.93,
+      "change_pct": -11.18,
+      "volume": 1109012.2,
+      "tokyo_price": 21.66,
+      "spread": 16.21,
+      "peak": 26.61,
+      "trough": 10.4,
+      "sell_bid_mwh": 1841797.0,
+      "buy_bid_mwh": 1398476.8
+    },
+    "area_avg": {
+      "hokkaido": 13.58,
+      "tohoku": 15.68,
+      "tokyo": 21.66,
+      "chubu": 19.08,
+      "hokuriku": 13.8,
+      "kansai": 13.8,
+      "chugoku": 13.8,
+      "shikoku": 13.24,
+      "kyushu": 12.7
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 16.93
+      }
+    }
+  },
+  {
+    "date": "2026-08-10",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 15.88,
+      "change_pct": -6.2,
+      "volume": 1136805.9,
+      "tokyo_price": 17.45,
+      "spread": 11.99,
+      "peak": 22.11,
+      "trough": 10.12,
+      "sell_bid_mwh": 1847307.1,
+      "buy_bid_mwh": 1410290.6
+    },
+    "area_avg": {
+      "hokkaido": 11.79,
+      "tohoku": 14.13,
+      "tokyo": 17.45,
+      "chubu": 17.17,
+      "hokuriku": 16.84,
+      "kansai": 16.84,
+      "chugoku": 16.5,
+      "shikoku": 15.97,
+      "kyushu": 15.06
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 15.88
+      }
+    }
+  },
+  {
+    "date": "2026-08-11",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 11.37,
+      "change_pct": -28.4,
+      "volume": 1062651.1,
+      "tokyo_price": 14.71,
+      "spread": 7.98,
+      "peak": 16.21,
+      "trough": 8.23,
+      "sell_bid_mwh": 1948824.2,
+      "buy_bid_mwh": 1261907.4
+    },
+    "area_avg": {
+      "hokkaido": 9.89,
+      "tohoku": 10.87,
+      "tokyo": 14.71,
+      "chubu": 13.24,
+      "hokuriku": 10.32,
+      "kansai": 10.32,
+      "chugoku": 10.32,
+      "shikoku": 8.06,
+      "kyushu": 10.32
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 11.37
+      }
+    }
+  },
+  {
+    "date": "2026-08-12",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 12.82,
+      "change_pct": 12.75,
+      "volume": 1071437.2,
+      "tokyo_price": 16.62,
+      "spread": 10.46,
+      "peak": 20.14,
+      "trough": 9.68,
+      "sell_bid_mwh": 1887779.9,
+      "buy_bid_mwh": 1289435.9
+    },
+    "area_avg": {
+      "hokkaido": 12.79,
+      "tohoku": 13.01,
+      "tokyo": 16.62,
+      "chubu": 16.41,
+      "hokuriku": 12.42,
+      "kansai": 12.06,
+      "chugoku": 11.53,
+      "shikoku": 11.31,
+      "kyushu": 11.37
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 12.82
+      }
+    }
+  },
+  {
+    "date": "2026-08-13",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 12.87,
+      "change_pct": 0.39,
+      "volume": 1047742.8,
+      "tokyo_price": 14.19,
+      "spread": 10.89,
+      "peak": 19.32,
+      "trough": 8.43,
+      "sell_bid_mwh": 1806705.4,
+      "buy_bid_mwh": 1236713.6
+    },
+    "area_avg": {
+      "hokkaido": 14.0,
+      "tohoku": 13.97,
+      "tokyo": 14.19,
+      "chubu": 14.07,
+      "hokuriku": 11.97,
+      "kansai": 11.18,
+      "chugoku": 11.18,
+      "shikoku": 10.21,
+      "kyushu": 11.17
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 12.87
+      }
     }
   },
   {
     "date": "2026-08-14",
-    "updated_at": "2026-08-14T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 29.52,
-      "change_pct": -0.47,
-      "volume": 127051,
-      "open_interest": 60295,
-      "market_heat": 67
+      "latest_price": 12.45,
+      "change_pct": -3.26,
+      "volume": 1065099.1,
+      "tokyo_price": 15.09,
+      "spread": 10.47,
+      "peak": 18.47,
+      "trough": 8.0,
+      "sell_bid_mwh": 1857341.0,
+      "buy_bid_mwh": 1273099.2
+    },
+    "area_avg": {
+      "hokkaido": 13.26,
+      "tohoku": 13.19,
+      "tokyo": 15.09,
+      "chubu": 13.5,
+      "hokuriku": 11.74,
+      "kansai": 10.93,
+      "chugoku": 10.82,
+      "shikoku": 10.76,
+      "kyushu": 10.72
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 12.45
+      }
     }
   },
   {
     "date": "2026-08-15",
-    "updated_at": "2026-08-15T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 31.04,
-      "change_pct": 5.17,
-      "volume": 107377,
-      "open_interest": 54776,
-      "market_heat": 57
+      "latest_price": 12.58,
+      "change_pct": 1.04,
+      "volume": 1098129.4,
+      "tokyo_price": 13.85,
+      "spread": 10.44,
+      "peak": 18.44,
+      "trough": 8.0,
+      "sell_bid_mwh": 1862692.2,
+      "buy_bid_mwh": 1304763.2
+    },
+    "area_avg": {
+      "hokkaido": 13.34,
+      "tohoku": 13.73,
+      "tokyo": 13.85,
+      "chubu": 13.63,
+      "hokuriku": 13.0,
+      "kansai": 11.88,
+      "chugoku": 11.77,
+      "shikoku": 11.69,
+      "kyushu": 11.76
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 12.58
+      }
     }
   },
   {
     "date": "2026-08-16",
-    "updated_at": "2026-08-16T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 30.45,
-      "change_pct": -1.92,
-      "volume": 121689,
-      "open_interest": 52541,
-      "market_heat": 62
+      "latest_price": 12.76,
+      "change_pct": 1.43,
+      "volume": 1087391.4,
+      "tokyo_price": 13.47,
+      "spread": 12.38,
+      "peak": 20.38,
+      "trough": 8.0,
+      "sell_bid_mwh": 1824748.9,
+      "buy_bid_mwh": 1286485.6
+    },
+    "area_avg": {
+      "hokkaido": 12.49,
+      "tohoku": 12.49,
+      "tokyo": 13.47,
+      "chubu": 13.8,
+      "hokuriku": 12.28,
+      "kansai": 12.28,
+      "chugoku": 12.28,
+      "shikoku": 12.18,
+      "kyushu": 12.28
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 12.76
+      }
     }
   },
   {
     "date": "2026-08-17",
-    "updated_at": "2026-08-17T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 30.98,
-      "change_pct": 1.75,
-      "volume": 122971,
-      "open_interest": 61597,
-      "market_heat": 67
+      "latest_price": 19.63,
+      "change_pct": 53.84,
+      "volume": 1251623.9,
+      "tokyo_price": 21.1,
+      "spread": 22.06,
+      "peak": 33.22,
+      "trough": 11.16,
+      "sell_bid_mwh": 1764092.9,
+      "buy_bid_mwh": 1555211.4
+    },
+    "area_avg": {
+      "hokkaido": 15.39,
+      "tohoku": 15.39,
+      "tokyo": 21.1,
+      "chubu": 22.22,
+      "hokuriku": 22.0,
+      "kansai": 19.21,
+      "chugoku": 18.37,
+      "shikoku": 17.95,
+      "kyushu": 17.85
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.63
+      }
     }
   },
   {
     "date": "2026-08-18",
-    "updated_at": "2026-08-18T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 31.03,
-      "change_pct": 0.17,
-      "volume": 129577,
-      "open_interest": 63946,
-      "market_heat": 62
+      "latest_price": 20.92,
+      "change_pct": 6.57,
+      "volume": 1274866.4,
+      "tokyo_price": 21.53,
+      "spread": 21.23,
+      "peak": 35.53,
+      "trough": 14.3,
+      "sell_bid_mwh": 1815631.6,
+      "buy_bid_mwh": 1633412.8
+    },
+    "area_avg": {
+      "hokkaido": 17.7,
+      "tohoku": 17.75,
+      "tokyo": 21.53,
+      "chubu": 24.13,
+      "hokuriku": 23.13,
+      "kansai": 21.28,
+      "chugoku": 19.37,
+      "shikoku": 19.37,
+      "kyushu": 18.51
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 20.92
+      }
     }
   },
   {
     "date": "2026-08-19",
-    "updated_at": "2026-08-19T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 31.77,
-      "change_pct": 2.36,
-      "volume": 103691,
-      "open_interest": 59302,
-      "market_heat": 54
+      "latest_price": 21.61,
+      "change_pct": 3.3,
+      "volume": 1305626.6,
+      "tokyo_price": 22.62,
+      "spread": 17.56,
+      "peak": 33.0,
+      "trough": 15.44,
+      "sell_bid_mwh": 1840030.0,
+      "buy_bid_mwh": 1664889.4
+    },
+    "area_avg": {
+      "hokkaido": 18.21,
+      "tohoku": 18.29,
+      "tokyo": 22.62,
+      "chubu": 23.76,
+      "hokuriku": 23.33,
+      "kansai": 20.15,
+      "chugoku": 18.97,
+      "shikoku": 17.42,
+      "kyushu": 18.97
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 21.61
+      }
     }
   },
   {
     "date": "2026-08-20",
-    "updated_at": "2026-08-20T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 31.23,
-      "change_pct": -1.68,
-      "volume": 135290,
-      "open_interest": 60488,
-      "market_heat": 63
+      "latest_price": 22.22,
+      "change_pct": 2.82,
+      "volume": 1327198.6,
+      "tokyo_price": 22.72,
+      "spread": 14.7,
+      "peak": 32.48,
+      "trough": 17.78,
+      "sell_bid_mwh": 1883915.6,
+      "buy_bid_mwh": 1686010.5
+    },
+    "area_avg": {
+      "hokkaido": 19.21,
+      "tohoku": 19.49,
+      "tokyo": 22.72,
+      "chubu": 24.08,
+      "hokuriku": 23.86,
+      "kansai": 20.5,
+      "chugoku": 18.22,
+      "shikoku": 16.73,
+      "kyushu": 18.22
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 22.22
+      }
     }
   },
   {
     "date": "2026-08-21",
-    "updated_at": "2026-08-21T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 31.42,
-      "change_pct": 0.59,
-      "volume": 137236,
-      "open_interest": 55978,
-      "market_heat": 60
+      "latest_price": 23.44,
+      "change_pct": 5.49,
+      "volume": 1327932.9,
+      "tokyo_price": 23.55,
+      "spread": 13.28,
+      "peak": 32.73,
+      "trough": 19.45,
+      "sell_bid_mwh": 1798057.4,
+      "buy_bid_mwh": 1705392.1
+    },
+    "area_avg": {
+      "hokkaido": 19.39,
+      "tohoku": 19.39,
+      "tokyo": 23.55,
+      "chubu": 24.4,
+      "hokuriku": 24.4,
+      "kansai": 21.64,
+      "chugoku": 19.73,
+      "shikoku": 18.47,
+      "kyushu": 19.43
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 23.44
+      }
     }
   },
   {
     "date": "2026-08-22",
-    "updated_at": "2026-08-22T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 32.12,
-      "change_pct": 2.24,
-      "volume": 115356,
-      "open_interest": 54817,
-      "market_heat": 67
+      "latest_price": 19.15,
+      "change_pct": -18.3,
+      "volume": 1205167.1,
+      "tokyo_price": 22.86,
+      "spread": 16.82,
+      "peak": 28.5,
+      "trough": 11.68,
+      "sell_bid_mwh": 1919747.6,
+      "buy_bid_mwh": 1550968.7
+    },
+    "area_avg": {
+      "hokkaido": 17.19,
+      "tohoku": 17.19,
+      "tokyo": 22.86,
+      "chubu": 22.21,
+      "hokuriku": 21.28,
+      "kansai": 20.51,
+      "chugoku": 18.29,
+      "shikoku": 18.25,
+      "kyushu": 17.79
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 19.15
+      }
     }
   },
   {
     "date": "2026-08-23",
-    "updated_at": "2026-08-23T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 33.07,
-      "change_pct": 2.97,
-      "volume": 113676,
-      "open_interest": 62133,
-      "market_heat": 74
+      "latest_price": 16.59,
+      "change_pct": -13.37,
+      "volume": 1175988.4,
+      "tokyo_price": 19.69,
+      "spread": 20.08,
+      "peak": 29.51,
+      "trough": 9.43,
+      "sell_bid_mwh": 1958825.6,
+      "buy_bid_mwh": 1429429.2
+    },
+    "area_avg": {
+      "hokkaido": 15.24,
+      "tohoku": 15.24,
+      "tokyo": 19.69,
+      "chubu": 19.46,
+      "hokuriku": 17.31,
+      "kansai": 17.31,
+      "chugoku": 15.68,
+      "shikoku": 15.36,
+      "kyushu": 15.16
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 16.59
+      }
     }
   },
   {
     "date": "2026-08-24",
-    "updated_at": "2026-08-24T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 32.82,
-      "change_pct": -0.78,
-      "volume": 115690,
-      "open_interest": 53747,
-      "market_heat": 76
+      "latest_price": 22.31,
+      "change_pct": 34.48,
+      "volume": 1350846.9,
+      "tokyo_price": 23.11,
+      "spread": 16.65,
+      "peak": 32.99,
+      "trough": 16.34,
+      "sell_bid_mwh": 1917948.0,
+      "buy_bid_mwh": 1732332.5
+    },
+    "area_avg": {
+      "hokkaido": 17.87,
+      "tohoku": 17.91,
+      "tokyo": 23.11,
+      "chubu": 25.04,
+      "hokuriku": 24.67,
+      "kansai": 23.75,
+      "chugoku": 19.86,
+      "shikoku": 19.33,
+      "kyushu": 18.82
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 22.31
+      }
     }
   },
   {
     "date": "2026-08-25",
-    "updated_at": "2026-08-25T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 34.07,
-      "change_pct": 3.81,
-      "volume": 112431,
-      "open_interest": 52490,
-      "market_heat": 75
+      "latest_price": 25.18,
+      "change_pct": 12.86,
+      "volume": 1452237.2,
+      "tokyo_price": 25.12,
+      "spread": 30.47,
+      "peak": 47.97,
+      "trough": 17.5,
+      "sell_bid_mwh": 1915766.4,
+      "buy_bid_mwh": 1842474.6
+    },
+    "area_avg": {
+      "hokkaido": 18.86,
+      "tohoku": 18.42,
+      "tokyo": 25.12,
+      "chubu": 26.37,
+      "hokuriku": 26.37,
+      "kansai": 26.27,
+      "chugoku": 24.44,
+      "shikoku": 23.98,
+      "kyushu": 22.28
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 25.18
+      }
     }
   },
   {
     "date": "2026-08-26",
-    "updated_at": "2026-08-26T01:30:00",
+    "updated_at": "2026-08-27T13:55:24",
     "spec_indicators": [
-      "最新结算价",
-      "当日涨跌",
-      "成交量",
-      "持仓量",
-      "市场热度"
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
     ],
     "metrics": {
-      "latest_price": 32.66,
-      "change_pct": -4.13,
-      "volume": 122531,
-      "open_interest": 52089,
-      "market_heat": 62
+      "latest_price": 25.73,
+      "change_pct": 2.18,
+      "volume": 1500219.7,
+      "tokyo_price": 25.59,
+      "spread": 32.9,
+      "peak": 50.01,
+      "trough": 17.11,
+      "sell_bid_mwh": 1886119.6,
+      "buy_bid_mwh": 1893745.7
+    },
+    "area_avg": {
+      "hokkaido": 19.77,
+      "tohoku": 20.78,
+      "tokyo": 25.59,
+      "chubu": 27.66,
+      "hokuriku": 27.66,
+      "kansai": 27.48,
+      "chugoku": 25.27,
+      "shikoku": 25.27,
+      "kyushu": 23.37
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
     },
     "sources": {
-      "westock": "腾讯自选股-金融数据查询",
-      "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
     },
     "raw": {
-      "westock": {},
-      "eastmoney_markdown": null
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 25.73
+      }
+    }
+  },
+  {
+    "date": "2026-08-27",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 25.21,
+      "change_pct": -2.02,
+      "volume": 1432276.9,
+      "tokyo_price": 24.81,
+      "spread": 17.0,
+      "peak": 35.01,
+      "trough": 18.01,
+      "sell_bid_mwh": 1852239.3,
+      "buy_bid_mwh": 1798411.6
+    },
+    "area_avg": {
+      "hokkaido": 16.74,
+      "tohoku": 22.76,
+      "tokyo": 24.81,
+      "chubu": 26.12,
+      "hokuriku": 26.05,
+      "kansai": 25.93,
+      "chugoku": 24.18,
+      "shikoku": 24.18,
+      "kyushu": 21.39
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 25.21
+      }
+    }
+  },
+  {
+    "date": "2026-08-28",
+    "updated_at": "2026-08-27T13:55:24",
+    "spec_indicators": [
+      "系统价格(日均)",
+      "日环比",
+      "约定总量",
+      "东京区域价格",
+      "日内峰谷价差"
+    ],
+    "metrics": {
+      "latest_price": 24.27,
+      "change_pct": -3.73,
+      "volume": 1397021.8,
+      "tokyo_price": 24.94,
+      "spread": 14.64,
+      "peak": 33.42,
+      "trough": 18.78,
+      "sell_bid_mwh": 1866632.9,
+      "buy_bid_mwh": 1739709.8
+    },
+    "area_avg": {
+      "hokkaido": 11.53,
+      "tohoku": 15.13,
+      "tokyo": 24.94,
+      "chubu": 25.86,
+      "hokuriku": 25.72,
+      "kansai": 25.71,
+      "chugoku": 23.21,
+      "shikoku": 23.21,
+      "kyushu": 19.65
+    },
+    "area_labels": {
+      "hokkaido": "北海道",
+      "tohoku": "东北",
+      "tokyo": "东京",
+      "chubu": "中部",
+      "hokuriku": "北陆",
+      "kansai": "关西",
+      "chugoku": "中国",
+      "shikoku": "四国",
+      "kyushu": "九州"
+    },
+    "sources": {
+      "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
+    },
+    "raw": {
+      "jepx": {
+        "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+        "slots": 48,
+        "sys_avg": 24.27
+      }
     }
   }
 ]

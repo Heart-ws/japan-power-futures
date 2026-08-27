@@ -8,10 +8,12 @@ REM ============================================================
 setlocal
 cd /d "%~dp0"
 
-REM 1) 运行更新（写入 ../data/latest.json、history.json）
-python japan_power_futures_updater.py --config config.yaml --run-once
+REM 1) 抓取 JEPX 真实数据（写入 ../data/latest.json、history.json）
+REM    数据源：JEPX 日本卸電力取引所官方公开 CSV，纯标准库、零第三方依赖
+REM    注意：若本机只有 py 命令而没有 python，把下面的 python 改成 py
+python jepx_fetch.py
 if ERRORLEVEL 1 (
-  echo [run_daily] 更新脚本返回失败，跳过推送。
+  echo [run_daily] JEPX 抓取失败，跳过推送（保留既有数据）。
   exit /b 1
 )
 

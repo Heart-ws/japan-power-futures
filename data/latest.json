@@ -1,26 +1,54 @@
 {
-  "date": "2026-08-26",
-  "updated_at": "2026-08-26T01:30:00",
+  "date": "2026-08-28",
+  "updated_at": "2026-08-27T13:55:24",
   "spec_indicators": [
-    "最新结算价",
-    "当日涨跌",
-    "成交量",
-    "持仓量",
-    "市场热度"
+    "系统价格(日均)",
+    "日环比",
+    "约定总量",
+    "东京区域价格",
+    "日内峰谷价差"
   ],
   "metrics": {
-    "latest_price": 32.66,
-    "change_pct": -4.13,
-    "volume": 122531,
-    "open_interest": 52089,
-    "market_heat": 62
+    "latest_price": 24.27,
+    "change_pct": -3.73,
+    "volume": 1397021.8,
+    "tokyo_price": 24.94,
+    "spread": 14.64,
+    "peak": 33.42,
+    "trough": 18.78,
+    "sell_bid_mwh": 1866632.9,
+    "buy_bid_mwh": 1739709.8
+  },
+  "area_avg": {
+    "hokkaido": 11.53,
+    "tohoku": 15.13,
+    "tokyo": 24.94,
+    "chubu": 25.86,
+    "hokuriku": 25.72,
+    "kansai": 25.71,
+    "chugoku": 23.21,
+    "shikoku": 23.21,
+    "kyushu": 19.65
+  },
+  "area_labels": {
+    "hokkaido": "北海道",
+    "tohoku": "东北",
+    "tokyo": "东京",
+    "chubu": "中部",
+    "hokuriku": "北陆",
+    "kansai": "关西",
+    "chugoku": "中国",
+    "shikoku": "四国",
+    "kyushu": "九州"
   },
   "sources": {
-    "westock": "腾讯自选股-金融数据查询",
-    "eastmoney_miaoxiang": "金融数据-东方财富妙想"
+    "jepx": "JEPX 日本卸電力取引所 · 现货（day-ahead）市场官方 CSV"
   },
   "raw": {
-    "westock": {},
-    "eastmoney_markdown": null
+    "jepx": {
+      "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
+      "slots": 48,
+      "sys_avg": 24.27
+    }
   }
 }

@@ -2,11 +2,11 @@
 // 读取 ./data/latest.json 与 ./data/history.json（由每日自动更新脚本生成）
 
 const METRICS = [
-  { key: "latest_price",  label: "最新结算价", unit: "¥/kWh" },
-  { key: "change_pct",    label: "当日涨跌",   unit: "%" },
-  { key: "volume",        label: "成交量",     unit: "MWh" },
-  { key: "open_interest", label: "持仓量",     unit: "手" },
-  { key: "market_heat",   label: "市场热度",   unit: "" },
+  { key: "latest_price", label: "系统价格(日均)", unit: "円/kWh" },
+  { key: "change_pct",   label: "日环比",         unit: "%" },
+  { key: "volume",       label: "约定总量",       unit: "MWh" },
+  { key: "tokyo_price",  label: "东京区域价格",   unit: "円/kWh" },
+  { key: "spread",       label: "日内峰谷价差",   unit: "円/kWh" },
 ];
 
 let LATEST = null;
@@ -57,11 +57,11 @@ async function boot() {
 /* ---- 报头 ---- */
 function renderCover() {
   const m = (LATEST && LATEST.metrics) || {};
-  const cp = LATEST?.change_pct;
+  const cp = m.change_pct;   // 修正：change_pct 位于 metrics 内，原先读顶层恒为 undefined
   const updated = LATEST?.updated_at || "";
-  const wsRaw = LATEST?.raw?.westock;
-  const hasWS = !!(wsRaw && Object.keys(wsRaw).length > 0);
-  const hasEM = !!LATEST?.raw?.eastmoney_markdown;
+  const jepxRaw = LATEST?.raw?.jepx;
+  const hasJEPX = !!(jepxRaw && Object.keys(jepxRaw).length > 0);
+  const slots = jepxRaw?.slots || 0;
   const fresh = isFresh(updated);
   const statusCls = fresh ? "ok" : "warn";
   const statusText = fresh ? "更新正常" : "更新可能延迟";
@@ -70,20 +70,20 @@ function renderCover() {
       '<span class="pill pill-blue">日本电力期货</span>' +
       '<span class="pill pill-gray">每日数据跟踪</span>' +
     '</div>' +
-    '<h1>日本电力期货（JEPX）每日数据日报</h1>' +
+    '<h1>日本电力市场（JEPX）每日数据日报</h1>' +
     '<p class="subtitle">数据看板 · 历史趋势 · 每日 09:30 自动更新</p>' +
     '<div class="cover-info">' +
-      '<div><div class="k">报告日期</div><div class="v">' + (LATEST?.date || "—") + '</div></div>' +
-      '<div><div class="k">最新结算价</div><div class="v">' + fmt(m.latest_price) + ' ¥/kWh</div></div>' +
-      '<div><div class="k">当日涨跌</div><div class="v ' + chgClass(cp) + '">' + (cp >= 0 ? "+" : "") + fmt(cp) + '%</div></div>' +
+      '<div><div class="k">交割日</div><div class="v">' + (LATEST?.date || "—") + '</div></div>' +
+      '<div><div class="k">系统价格(日均)</div><div class="v">' + fmt(m.latest_price) + ' 円/kWh</div></div>' +
+      '<div><div class="k">日环比</div><div class="v ' + chgClass(cp) + '">' + (cp >= 0 ? "+" : "") + fmt(cp) + '%</div></div>' +
       '<div><div class="k">研究机构</div><div class="v">华泰期货 · 研究</div></div>' +
     '</div>' +
     '<div class="status-bar ' + statusCls + '">' +
       '<span class="sb-dot"></span>' +
       '<span>最后更新：' + fmtTime(updated) + '</span>' +
       '<span class="sb-sep">·</span>' +
-      '<span class="src-badge ' + (hasWS ? "on" : "off") + '">腾讯自选股 ' + (hasWS ? "✓" : "—") + '</span>' +
-      '<span class="src-badge ' + (hasEM ? "on" : "off") + '">东方财富妙想 ' + (hasEM ? "✓" : "—") + '</span>' +
+      '<span class="src-badge ' + (hasJEPX ? "on" : "off") + '">JEPX 官方数据 ' + (hasJEPX ? "✓" : "—") + '</span>' +
+      '<span class="src-badge ' + (slots >= 48 ? "on" : "off") + '">' + (slots ? slots + "/48 时段" : "时段缺失") + '</span>' +
       '<span class="sb-status">' + statusText + '</span>' +
     '</div>';
 }
@@ -92,7 +92,7 @@ function renderCover() {
 function renderToc() {
   const items = [
     ["overview", "一、市场概览"],
-    ["contracts", "二、重点合约行情表"],
+    ["contracts", "二、重点行情表"],
     ["news", "三、市场新闻与动态"],
     ["logics", "四、交易逻辑"],
     ["watchlist", "五、关注事项"],
@@ -126,13 +126,15 @@ function renderContent() {
   }).join("");
 
   h.push(sec("overview", "一、", "市场概览",
-    '<p>以下为日本电力期货（JEPX）最新交易日核心指标与近期走势。数据经腾讯自选股、东方财富妙想金融数据技能聚合，每日 09:30 自动刷新。</p>' +
+    '<p>以下为日本电力市场（JEPX 现货 / day-ahead）最新交割日核心指标与近期走势。数据直接取自 ' +
+    '<b>JEPX 日本卸電力取引所官方公开数据</b>（每日 48 个 30 分钟时段），每日 09:30 自动抓取刷新。' +
+    '系统价格（システムプライス）为全国统一出清价，是日本电力衍生品的基准结算参考。</p>' +
     '<div class="index-grid">' + cards + '</div>' +
-    '<div class="chart-box"><div class="cb-title">结算价走势（近 30 日）</div><div class="canvas-wrap"><canvas id="priceChart"></canvas></div></div>' +
-    '<div class="chart-box"><div class="cb-title">成交量走势（近 30 日）</div><div class="canvas-wrap"><canvas id="volumeChart"></canvas></div></div>'
+    '<div class="chart-box"><div class="cb-title">系统价格走势（近 30 日，円/kWh）</div><div class="canvas-wrap"><canvas id="priceChart"></canvas></div></div>' +
+    '<div class="chart-box"><div class="cb-title">约定总量走势（近 30 日，MWh）</div><div class="canvas-wrap"><canvas id="volumeChart"></canvas></div></div>'
   ));
 
-  /* 二、重点合约行情表（近期交易日） */
+  /* 二、重点行情表（近期交割日 + 区域价格） */
   const recent = HISTORY.slice(-12).reverse();
   const rows = recent.map(r => {
     const mm = r.metrics || {};
@@ -140,22 +142,42 @@ function renderContent() {
       '<td class="num">' + fmt(mm.latest_price) + '</td>' +
       '<td class="num ' + chgClass(mm.change_pct) + '">' + (mm.change_pct >= 0 ? "+" : "") + fmt(mm.change_pct) + '%</td>' +
       '<td class="num">' + fmt(mm.volume, 0) + '</td>' +
-      '<td class="num">' + fmt(mm.open_interest, 0) + '</td></tr>';
+      '<td class="num">' + fmt(mm.tokyo_price) + '</td>' +
+      '<td class="num">' + fmt(mm.spread) + '</td></tr>';
   }).join("");
-  h.push(sec("contracts", "二、", "重点合约行情表",
+
+  // 最新交割日 9 区域价格
+  const areas = LATEST?.area_avg || {};
+  const labels = LATEST?.area_labels || {};
+  const sysAvg = m.latest_price;
+  const areaRows = Object.keys(areas).map(k => {
+    const v = areas[k];
+    const diff = (v !== null && sysAvg) ? v - sysAvg : null;
+    return '<tr><td>' + (labels[k] || k) + '</td>' +
+      '<td class="num">' + fmt(v) + '</td>' +
+      '<td class="num ' + chgClass(diff) + '">' + (diff > 0 ? "+" : "") + fmt(diff) + '</td></tr>';
+  }).join("");
+
+  h.push(sec("contracts", "二、", "重点行情表",
+    '<div class="cb-title" style="margin-bottom:8px">近期交割日行情（JEPX 现货）</div>' +
     '<div class="table-wrap"><table>' +
-    '<thead><tr><th>交易日</th><th class="num">结算价(¥/kWh)</th><th class="num">涨跌</th><th class="num">成交量(MWh)</th><th class="num">持仓量(手)</th></tr></thead>' +
-    '<tbody>' + (rows || '<tr><td colspan="5" class="muted-note">暂无数据</td></tr>') + '</tbody></table></div>'
+    '<thead><tr><th>交割日</th><th class="num">系统价格(円/kWh)</th><th class="num">日环比</th>' +
+    '<th class="num">约定总量(MWh)</th><th class="num">东京价格(円/kWh)</th><th class="num">峰谷价差</th></tr></thead>' +
+    '<tbody>' + (rows || '<tr><td colspan="6" class="muted-note">暂无数据</td></tr>') + '</tbody></table></div>' +
+    '<div class="cb-title" style="margin:18px 0 8px">最新交割日各区域价格（対 系统价格偏离）</div>' +
+    '<div class="table-wrap"><table>' +
+    '<thead><tr><th>区域</th><th class="num">区域价格(円/kWh)</th><th class="num">对系统价偏离</th></tr></thead>' +
+    '<tbody>' + (areaRows || '<tr><td colspan="3" class="muted-note">暂无数据</td></tr>') + '</tbody></table></div>'
   ));
 
   /* 三、市场新闻与动态 */
   const news = [
-    { title: "日本电力期货每日数据自动更新已上线", source: "华泰期货 · 研究", type: "官方",
-      summary: "平台已接入每日 09:30 自动抓取与入库流程，客户打开网页即可查看截至最新交易日的数据，无需手动操作。" },
-    { title: "JEPX 市场数据来源说明", source: "华泰期货 · 研究", type: "行业媒体",
-      summary: "数据来自日本电力期货交易所公开行情，并经腾讯自选股、东方财富妙想金融数据技能聚合，最终以交易所官方发布为准。" },
-    { title: "夏季制冷与冬季采暖季节性影响电价", source: "市场观察", type: "行业媒体",
-      summary: "极端气温会显著抬升日内与峰值负荷，进而推高电力期货价格波动，建议关注季节性供需变化。" },
+    { title: "已接入 JEPX 官方数据源，每日自动更新上线", source: "华泰期货 · 研究", type: "官方",
+      summary: "平台已直连 JEPX 日本卸電力取引所官方公开数据，每日 09:30 自动抓取全部 48 个 30 分钟时段并聚合入库，客户打开网页即可查看最新交割日数据。" },
+    { title: "数据来源与口径说明", source: "华泰期货 · 研究", type: "行业媒体",
+      summary: "系统价格（システムプライス）为 JEPX 现货市场全国统一出清价；区域价格反映各输配电区域的阻塞情况。约定总量为当日 48 时段成交电量合计，单位 MWh。最终以交易所官方发布为准。" },
+    { title: "夏季制冷与冬季采暖的季节性影响", source: "市场观察", type: "行业媒体",
+      summary: "极端气温显著抬升日内与峰值负荷，推高日内峰谷价差；建议结合区域价格偏离观察输电阻塞与季节性供需变化。" },
   ];
   h.push(sec("news", "三、", "市场新闻与动态",
     news.map((n, i) => {
@@ -179,9 +201,9 @@ function renderContent() {
 
   /* 五、关注事项 */
   const watch = [
-    { date: "每日 09:30", event: "数据自动更新与重新部署", impact: "网页展示截至最新交易日的数据" },
-    { date: "交易所休市日", event: "无当日行情", impact: "数据沿用上一交易日，页面标注日期" },
-    { date: "极端天气", event: "价格异动风险", impact: "关注成交量与持仓量异常放大" },
+    { date: "每日 09:30", event: "数据自动抓取与重新部署", impact: "网页展示截至最新交割日的 JEPX 数据" },
+    { date: "JEPX 数据延迟", event: "官方 CSV 未及时更新", impact: "报头状态条转为「更新可能延迟」，数据沿用上一交割日" },
+    { date: "极端天气", event: "价格异动风险", impact: "关注峰谷价差走阔与区域价格大幅偏离系统价" },
   ];
   h.push(sec("watchlist", "五、", "关注事项",
     '<div class="table-wrap"><table>' +
@@ -191,7 +213,7 @@ function renderContent() {
 
   document.getElementById("content").innerHTML = h.join("");
   document.getElementById("disc").textContent =
-    "本平台仅用于数据展示与统计分析，不构成任何投资建议；数据以公开/授权来源为准，最终以交易所官方发布为准。© 华泰期货 · 研究";
+    "本平台仅用于数据展示与统计分析，不构成任何投资建议；数据来源为 JEPX 日本卸電力取引所公开数据，最终以交易所官方发布为准。© 华泰期货 · 研究";
 
   drawCharts();
 }
@@ -216,14 +238,14 @@ function drawCharts() {
     new Chart(document.getElementById("priceChart"), {
       type: "line",
       data: { labels, datasets: [{ data: prices, borderColor: "#1f6fb2", backgroundColor: "rgba(31,111,178,.12)", fill: true, tension: .3, pointRadius: 2 }] },
-      options: baseOpts("结算价", "¥/kWh"),
+      options: baseOpts("系统价格", "円/kWh"),
     });
   }
   if (document.getElementById("volumeChart")) {
     new Chart(document.getElementById("volumeChart"), {
       type: "bar",
       data: { labels, datasets: [{ data: volumes, backgroundColor: "rgba(31,111,178,.45)" }] },
-      options: baseOpts("成交量", "MWh"),
+      options: baseOpts("约定总量", "MWh"),
     });
   }
 }
