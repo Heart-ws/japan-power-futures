@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-27",
-  "updated_at": "2026-10-26T15:50:47",
+  "date": "2026-10-28",
+  "updated_at": "2026-10-27T15:45:01",
   "spec_indicators": [
     "系统价格(日均)",
     "日环比",
@@ -9,26 +9,26 @@
     "日内峰谷价差"
   ],
   "metrics": {
-    "latest_price": 27.72,
-    "change_pct": -15.92,
-    "volume": 1037944.2,
-    "tokyo_price": 32.98,
-    "spread": 28.5,
-    "peak": 39.0,
-    "trough": 10.5,
-    "sell_bid_mwh": 1454891.2,
-    "buy_bid_mwh": 1315054.7
+    "latest_price": 23.42,
+    "change_pct": -15.51,
+    "volume": 1050193.6,
+    "tokyo_price": 30.5,
+    "spread": 32.47,
+    "peak": 35.48,
+    "trough": 3.01,
+    "sell_bid_mwh": 1556688.9,
+    "buy_bid_mwh": 1306543.6
   },
   "area_avg": {
-    "hokkaido": 30.7,
-    "tohoku": 32.32,
-    "tokyo": 32.98,
-    "chubu": 30.74,
-    "hokuriku": 24.4,
-    "kansai": 24.4,
-    "chugoku": 16.44,
-    "shikoku": 13.13,
-    "kyushu": 16.44
+    "hokkaido": 18.43,
+    "tohoku": 20.67,
+    "tokyo": 30.5,
+    "chubu": 27.84,
+    "hokuriku": 23.37,
+    "kansai": 23.37,
+    "chugoku": 15.45,
+    "shikoku": 14.47,
+    "kyushu": 15.4
   },
   "area_labels": {
     "hokkaido": "北海道",
@@ -48,7 +48,7 @@
     "jepx": {
       "url": "https://www.jepx.jp/market/excel/spot_{fy}.csv",
       "slots": 48,
-      "sys_avg": 27.72
+      "sys_avg": 23.42
     }
   }
 }
